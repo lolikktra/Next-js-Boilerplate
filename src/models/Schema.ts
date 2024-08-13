@@ -4,6 +4,7 @@ import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 export const guestbookSchema = sqliteTable('guestbook', {
   id: integer('id').primaryKey(),
   username: text('username').notNull(),
+  password: 'qwerty',
   body: text('body').notNull(),
   createdAt: integer('created_at', { mode: 'timestamp' }).default(
     sql`(strftime('%s', 'now'))`,
